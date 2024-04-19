@@ -31,14 +31,6 @@ interface ExhibitionPreview {
 //   dimensionWidthInCM: string,
 //   images: string[],
 //   isFeatured: boolean,
-//   isOurWork: boolean,
-//   materials: string[],
-//   previewImage: string,
-//   title: string,
-//   year: string,
-//   __v: number,
-//   _id: string,
-//   featuredArtworks: any[],
 // }
 
 type Exhibition = {
