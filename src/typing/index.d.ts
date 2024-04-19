@@ -27,9 +27,6 @@ interface ExhibitionPreview {
 //   artist: string,
 //   categories: string[],
 //   createdAt: string,
-//   dimensionLengthInCM: string,
-//   dimensionWidthInCM: string,
-//   images: string[],
 //   isFeatured: boolean,
 // }
 
