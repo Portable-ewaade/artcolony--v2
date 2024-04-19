@@ -55,7 +55,7 @@ const Section2 = () => {
       {!loading && !error && (
         <div>
           {artistExhb && (
-            <div className='item mt-5 cursor-pointer flex flex-col md:flex-row md:space-x-20 space-y-8 md:space-y-0 md:p-0 p-3'>
+            <div className='item mt-5 flex flex-col md:flex-row md:space-x-20 space-y-8 md:space-y-0 md:p-0 p-3'>
               <div className=''>
                 <h1 className='font-bold my-3 text-xl'>{artistExhb.title}</h1>
                 <Divider size='xs' color='#ADADAD' />
