@@ -1,0 +1,39 @@
+{
+  "name": "artcolony--v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "@googlemaps/js-api-loader": "^1.16.6",
+    "@headlessui/react": "^1.7.18",
+    "@mantine/core": "^7.7.1",
+    "@mantine/form": "^7.7.1",
+    "@mantine/hooks": "^7.7.1",
+    "@mantine/notifications": "^7.7.1",
+    "axios": "^1.6.8",
+    "date-fns": "^3.6.0",
+    "emailjs": "^4.0.3",
+    "mantine-form-yup-resolver": "^2.0.0",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "react-owl-carousel": "^2.3.3",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
