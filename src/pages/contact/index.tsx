@@ -157,7 +157,9 @@ const Contact = () => {
               info@artcolonygallery.com
             </a>
           </h3>
+
           {/* <Map address='1600 Amphitheatre Parkway, Mountain View, CA' /> */}
+          
         </div>
         <div className='rounded-lg shadow-2xl p-10'>
           <form onSubmit={form.onSubmit(console.log)}>
