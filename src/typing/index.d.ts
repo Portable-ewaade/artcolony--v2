@@ -76,8 +76,9 @@ interface SingleArtist {
   works: any;
   success: any;
   message: string;
-  fullBiography: ReactNode;
-  lastName: ReactNode;
+  fullBiography: string;
+  firstName: string;
+  lastName: string;
   categories: string[];
   createdAt: string;
   dimensionLengthInCM: string;
