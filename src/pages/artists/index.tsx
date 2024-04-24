@@ -74,7 +74,7 @@ const Artist = () => {
       )}
 
       {!loading && !error && (
-        <div className='md:grid grid-cols-3 gap-5 h-auto md:p-0 p-3'>
+        <div className='md:grid grid-cols-3 md:gap-5 md:p-0 p-3'>
           {allArtist.map((artist, _id) => (
             <div
               key={_id}
@@ -82,12 +82,11 @@ const Artist = () => {
               onClick={() => handleArtistClick(artist._id)}
             >
               <img
-                className='h-[90%] w-[100%]'
+                className='h-[90%] w-[100%] '
                 src={artist.previewImageWork}
                 alt={`artist from ${artist.firstName}`}
               />
-              <h3 className='font-bold my-3'>{`${artist.firstName} ${artist.lastName}`}</h3>
-              {/* <p>{artist.fullBiography}</p> */}
+              <h3 className='font-bold mt-3 pb-5'>{`${artist.firstName} ${artist.lastName}`}</h3>
             </div>
           ))}
         </div>

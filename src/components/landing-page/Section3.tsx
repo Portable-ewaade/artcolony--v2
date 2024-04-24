@@ -17,14 +17,14 @@ const Section3 = () => {
       <section className='container md:w-[90%] mx-auto p-3 md:p-0 mt-12 md:mt-0'>
         <Center mb={20}>
           <Box>
-            <h1 className='md:text-[35px] text-[30px] font-[700]'>
+            <h1 className='md:text-[35px] text-[27px] font-[700]'>
               WHAT IS ARTCOLONY?
             </h1>
             <Group justify='flex-end' pe={12}>
               <Divider
                 size='sm'
                 color='#DA3400'
-                className='md:w-[13rem] w-[11rem]'
+                className='md:w-[14.5rem] w-[11rem]'
               />
             </Group>
           </Box>

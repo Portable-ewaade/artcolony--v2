@@ -11,10 +11,14 @@ const Section6 = () => {
       <section className='container md:w-[90%] mx-auto'>
         <Center className='mb-[1rem] md:mb-[3rem]'>
           <Box>
-            <Text size='35px' mt={30} fw={700}>
+            <h1 className='md:text-[35px] text-[27px] mt-10 font-[700]'>
               FACE OF ARTCOLONY
-            </Text>
-            <Divider my='xs' size='sm' color='#DA3400' w={85} />
+            </h1>
+            <Divider
+              size='sm'
+              color='#DA3400'
+              className='md:w-[5.5rem] w-[4.5rem]'
+            />
           </Box>
         </Center>
         <div className='md:flex flex-row md:space-x-10 md:p-0 p-3'>

@@ -44,11 +44,11 @@ const Section2 = () => {
     <section className='container md:w-[90%] mx-auto md:px-0 p-3'>
       <Center mb={20}>
         <Box>
-          <h1 className='md:text-[35px] text-[30px] mt-10 font-[700]'>
+          <h1 className='md:text-[35px] text-[27px] mt-10 font-[700]'>
             FEATURED ARTWORKS
           </h1>
           <Group justify='flex-start'>
-            <Divider size='sm' color='#DA3400' className='md:w-[10.5rem] w-[9rem]' />
+            <Divider size='sm' color='#DA3400' className='md:w-[11.5rem] w-[9rem]' />
           </Group>
         </Box>
       </Center>
@@ -75,6 +75,9 @@ const Section2 = () => {
               </Link>
               <h3 className='font-bold my-1'>{item.title}</h3>
               <div className='text-sm font-medium'>
+                <p className='my-2'>
+                  {item.materials}
+                </p>
                 <p className='my-2'>
                   {item.categories[0].charAt(0).toUpperCase() +
                     item.categories[0].slice(1)}

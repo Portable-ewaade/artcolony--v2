@@ -53,14 +53,14 @@ const Gallery = () => {
     <section className='container md:w-[90%] mx-auto'>
       <Center mb={20}>
         <Box>
-          <h1 className='md:text-[35px] text-[30px] font-[700] mt-28'>
+          <h1 className='md:text-[35px] text-[27px] font-[700] mt-28'>
             ARTCOLONY’S GALLERY
           </h1>
           <Group justify='flex-end'>
             <Divider
               size='sm'
               color='#DA3400'
-              className='md:w-[9rem] w-[7.5rem]'
+              className='md:w-[10rem] w-[8rem]'
             />
           </Group>
         </Box>

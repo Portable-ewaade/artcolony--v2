@@ -1,9 +1,5 @@
 export const linkData = [
 	{
-		title: 'HOME',
-		url: '/',
-	},
-	{
 		title: 'ARTISTS',
 		url: '/artists',
 	},

@@ -25,7 +25,7 @@ const ArtistPage = () => {
     const fetchArtistArtwork = async () => {
       try {
         const response = await apiArtistArtwork(id as string);
-        if (response) console.log(response.works);
+        if (response) console.log(response);
         setArtistArtwork(response.works || []);
       } catch (error) {
         console.error('Error fetching artist Artwork:', error);
@@ -42,7 +42,7 @@ const ArtistPage = () => {
     const fetchArtistExhibition = async () => {
       try {
         const response = await apiArtistExhb(id as string);
-        if (response) console.log(response.exhibitions);
+        if (response) console.log(response);
         setArtistExhb(response.exhibitions || []);
       } catch (error) {
         console.error('Error fetching artist Exhibition:', error);
@@ -85,11 +85,21 @@ const ArtistPage = () => {
     window.history.back();
   };
   return (
-    <section className='container md:w-[91%] mx-auto pt-32'>
+    <section className='container md:w-[91%] mx-auto pt-28'>
       <Box>
         <h1 className='ps-3 mb-6 cursor-pointer' onClick={handleBackClick}>
           <IoMdArrowBack size={25} />
         </h1>
+        {loading && (
+          <Center mt={20}>
+            <Loader />
+          </Center>
+        )}
+        {!loading && !error && (
+          <div>
+            <h1 className='font-bold text-2xl my-8 ms-4'>{`${singleArtist?.firstName.toLocaleUpperCase()} ${singleArtist?.lastName.toLocaleUpperCase()}`}</h1>
+          </div>
+        )}
 
         <Tabs defaultValue='ARTWORKS' color='#DA3400'>
           <Tabs.List>
@@ -112,13 +122,38 @@ const ArtistPage = () => {
             )}
 
             {!loading && !error && (
-              <div className='md:grid md:grid-cols-3 gap-10 h-auto md:p-0 p-3'>
-                {artistArtwork?.map((artist, _id) => (
-                  <div key={_id} className='item mt-5'>
-                    <img className='h-[90%] w-[100%]' src={artist.images[0]} />
-                  </div>
-                ))}
-              </div>
+              <>
+                <p className='text-sm font-semibold mx-4 mt-8'> {artistArtwork?.length} Artworks</p>
+                <div className='md:grid md:grid-cols-3 gap-8 h-auto md:p-0 p-3'>
+                  {artistArtwork?.map((artist, _id) => (
+                    <div key={_id} className='item mt-2 mb-14 md:mb-0'>
+                      <img
+                        className='h-[75%] w-[100%]'
+                        src={artist.images[0]}
+                      />
+                      <h3 className='font-bold my-1'>{artist.title}</h3>
+                      <div className='text-sm font-medium'>
+                        <p className='my-2'>{artist.materials}</p>
+                        <p className='my-2'>{artist.firstName}</p>
+                        <p className='my-2'>
+                          {artist.categories[0].charAt(0).toUpperCase() +
+                            artist.categories[0].slice(1)}
+                        </p>
+                        <p className='my-2'>
+                          {artist.categories[1]
+                            .split(' ')
+                            .map(
+                              (word: string) =>
+                                word.charAt(0).toUpperCase() + word.slice(1)
+                            )
+                            .join(' ')}
+                        </p>
+                        <p>{`${artist.dimensionLengthInCM}" x ${artist.dimensionWidthInCM}"`}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
             )}
           </Tabs.Panel>
 
@@ -175,8 +210,7 @@ const ArtistPage = () => {
                   'Past Exhibition',
                 ].map((status) => (
                   <>
-                    {artistExhb
-                      .filter((exhibition) => {
+                    {artistExhb?.filter((exhibition) => {
                         const currentDate = new Date();
                         const startDate = new Date(exhibition.startDate);
                         const endDate = new Date(exhibition.endDate);
@@ -190,8 +224,7 @@ const ArtistPage = () => {
                         } else if (status === 'Past Exhibition') {
                           return endDate < currentDate;
                         }
-                      })
-                      .map((exhibition) => (
+                      })?.map((exhibition) => (
                         <div key={exhibition._id} className='md:p-0 p-3'>
                           <h1 className='font-medium text-xl md:mt-16 mt-8'>
                             {status.toLocaleUpperCase()}
@@ -211,15 +244,10 @@ const ArtistPage = () => {
                               </h1>
                               <p className='my-4 text-sm'>{exhibition.label}</p>
                               <p className='my-4 text-sm'>
-                                Start Date:{' '}
                                 {format(
                                   new Date(exhibition.startDate),
                                   'MMMM dd, yyyy'
-                                )}
-                              </p>
-                              <p className='my-4 text-sm'>
-                                End Date:{' '}
-                                {format(
+                                )} - {format(
                                   new Date(exhibition.endDate),
                                   'MMMM dd, yyyy'
                                 )}

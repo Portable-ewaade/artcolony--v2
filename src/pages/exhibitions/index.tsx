@@ -42,14 +42,14 @@ const Exhibitions = () => {
     <section className='container md:w-[90%] mx-auto'>
       <Center mb={20}>
         <Box>
-          <h1 className='md:text-[35px] text-[25px] mt-28 font-[700]'>
+          <h1 className='md:text-[35px] text-[23px] mt-28 font-[700]'>
             ARTCOLONY’S EXHIBITIONS
           </h1>
           <Group justify='flex-end'>
             <Divider
               size='sm'
               color='#DA3400'
-              className='md:w-[13.5rem] w-[9.7rem]'
+              className='md:w-[14.5rem] w-[9.7rem]'
             />
           </Group>
         </Box>
@@ -98,7 +98,7 @@ const Exhibitions = () => {
                     .map((exhibition) => (
                       <div
                         key={exhibition._id}
-                        className='md:grid gap-3'
+                        className='md:grid gap-3' 
                         onClick={() => handleImageClick(exhibition._id)}
                       >
                         <img
@@ -106,22 +106,17 @@ const Exhibitions = () => {
                           src={exhibition.images[0]}
                           alt={exhibition.title}
                         />
-                        <div className='font-medium'>
+                        <div className='font-medium mt-2 md:mt-0'>
                           <h1 className='text-lg'>{exhibition.artist}</h1>
                           <h1 className='text-md'>
                             {exhibition.title.toUpperCase()}
                           </h1>
                           <p className='text-sm'>{exhibition.label}</p>
                           <p className='text-sm'>
-                            Start Date:{' '}
                             {format(
                               new Date(exhibition.startDate),
                               'MMMM dd, yyyy'
-                            )}
-                          </p>
-                          <p className='text-sm'>
-                            End Date:{' '}
-                            {format(
+                            )} - {format(
                               new Date(exhibition.endDate),
                               'MMMM dd, yyyy'
                             )}

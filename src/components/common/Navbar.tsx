@@ -15,19 +15,15 @@ interface Link {
 }
 
 export default function Navigate() {
- const [isOpen, setIsOpen] = useState(false);
- const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
- const toggleDisclosure = () => {
-   setIsOpen(!isOpen);
- };
-
+  const toggleDisclosure = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <Disclosure
-      as='nav'
-      className=' fixed z-50 w-full bg-white pt-0 shadow-xl'
-    >
+    <Disclosure as='nav' className=' fixed z-50 w-full bg-white pt-0 shadow-xl'>
       {({ open }) => (
         <section className='container md:w-[91%] mx-auto'>
           <div className='px-3 md:px-0'>
@@ -83,7 +79,10 @@ export default function Navigate() {
           </div>
 
           <Disclosure.Panel className='z-10'>
-            <div className='space-y-10 px-2 pb-3 pt-2 h-screen text-white w-2/3 end-0 absolute bg-gradient-to-r from-[#DA3400] to-[#892303] backdrop-brightness-100 shadow-lg z-10 disclosure'>
+            <div className='space-y-10 px-2 pb-3 pt-6 h-screen text-white w-2/3 end-0 absolute bg-gradient-to-r from-[#DA3400] to-[#892303] backdrop-brightness-100 shadow-lg z-10 disclosure '>
+              <Link href='/' className='font-[550] mx-3 link '>
+                HOME
+              </Link>
               {linkData.map((link, index) => (
                 <ul className='' key={index}>
                   {link && (

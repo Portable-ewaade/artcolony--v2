@@ -78,12 +78,12 @@ const Section4 = () => {
         )}
 
         {!loading && !error && (
-          <div className='md:grid md:grid-cols-3 md:gap-6 mt-3 md:mt-5 space-y-16 md:space-y-0'>
+          <div className='md:grid md:grid-cols-3 md:gap-6 mt-3 md:mt-5 space-y-16 md:space-y-0 h-[65%]'>
             {allGallery.slice(3, 6).map((artist, _id) => (
               <div key={_id} className='item cursor-pointer'>
                 <Link href='/gallery'>
                   <img
-                    className='h-[90%] w-[100%]'
+                    className='h-[66vh] w-[100%]'
                     src={artist.previewImage}
                     alt={`artist from ${artist.title}`}
                   />
@@ -111,7 +111,7 @@ const Section4 = () => {
           </div>
         )}
 
-        <Center className='mt-[1.5rem] md:mt-[7rem]'>
+        <Center className='mt-12'>
           <Button
             variant='transparent'
             color='black'

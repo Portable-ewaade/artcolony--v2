@@ -68,7 +68,7 @@ const Section5 = () => {
       <section className='container md:w-[90%] mx-auto'>
         <Center>
           <Box>
-            <h1 className='md:text-[35px] text-[30px] mt-10 font-[700]'>
+            <h1 className='md:text-[35px] text-[27px] mt-10 font-[700]'>
               FEATURED EXHIBITIONS
             </h1>
 
@@ -76,7 +76,7 @@ const Section5 = () => {
               <Divider
                 size='sm'
                 color='#DA3400'
-                className='md:w-[13.5rem] w-[11.5rem]'
+                className='md:w-[14.5rem] w-[11.2rem]'
               />
             </Group>
           </Box>
@@ -122,17 +122,20 @@ const Section5 = () => {
                     >
                       <div>
                         <img
-                          className='h-[70vh] w-[100%]'
+                          className='h-[65vh] w-[100%]'
                           src={exhibition.images[0]}
                           alt={exhibition.title}
                         />
                         <div className=' font-medium my-auto'>
-                          <h1 className='my-4 text-lg'>{exhibition.artist}</h1>
-                          <h1 className='my-4 text-md'>
+                          <h1 className='my-2 text-lg'>{exhibition.artist}</h1>
+                          <h1 className='my-2 text-md'>
                             {exhibition.title.toLocaleUpperCase()}
                           </h1>
-                          <p className='my-4 text-sm'>{exhibition.label}</p>
-                          <p className='my-4 text-sm'>
+                          <p className='my-2 text-sm'>
+                            {exhibition.type.toLocaleUpperCase()}
+                          </p>
+                          <p className='my-2 text-sm'>{exhibition.label}</p>
+                          <p className='my-2 text-sm'>
                             {format(
                               new Date(exhibition.startDate),
                               'MMMM dd, yyyy'
