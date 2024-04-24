@@ -1,49 +1,62 @@
 declare namespace Navbar {
-  interface Link {
+  interface link {
     url: string;
     title: string;
   }
 }
-
-interface ExhibitionBase {
-  _id: string;
+interface CurrentExhibition {
+  artist: string;
+  src: string;
   title: string;
-  createdAt: string;
-  images: string[];
-  isFeatured: boolean;
-}
-
-interface Exhibition extends ExhibitionBase {
-  type: string;
-  description: string;
-  startDate: string;
-  endDate: string;
-  artists: string[];
-  exhibitions: any
-  __v: number;
   label: string;
-  artist: string;
+  date: string;
+  id: number;
 }
 
-interface ExhibitionPreview extends ExhibitionBase {
+interface ExhibitionPreview {
+  id: string;
   artist: string;
+  src: string;
+  title: string;
   label: string;
   imgType: string;
 }
 
-interface FeaturedArtwork extends ExhibitionBase {
-  year: string;
+type Exhibition = {
+  exhibition: any;
+  exhibitions: any[];
+  artist: ReactNode;
+  label: ReactNode;
+  categories: string[];
   dimensionLengthInCM: string;
   dimensionWidthInCM: string;
-  artist: string;
-  categories: string[];
-  isOurWork: boolean;
-  materials: string[];
-  previewImage: string;
+  fullBiography: string;
+  success: any;
+  works: any;
+  message: string | undefined;
+  _id: string;
+  startDate: string;
+  endDate: string;
+  title: string;
+  images: string[];
+  isFeatured: boolean;
+  artists: string[];
+  type: string;
+  description: string;
+  createdAt: string;
   __v: number;
-}
+  previewImage: string;
+};
 
-interface ArtistBase {
+interface Artist {
+  materials: string;
+  title: string;
+  categories: string[];
+  dimensionLengthInCM: any;
+  dimensionWidthInCM: any;
+  success: any;
+  artists: never[];
+  message: string | undefined;
   _id: string;
   firstName: string;
   lastName: string;
@@ -59,35 +72,64 @@ interface ArtistBase {
   __v: number;
 }
 
-interface Artist extends ArtistBase {
-  materials: string;
-  title: string;
-  categories: string[];
-  dimensionLengthInCM: any;
-  dimensionWidthInCM: any;
-  success: any;
-  message: string | undefined;
-  artist: any;
-}
-
-interface SingleArtist extends ArtistBase {
+interface SingleArtist {
   works: any;
   success: any;
   message: string;
-  artist: any;
   fullBiography: ReactNode;
+  lastName: ReactNode;
   categories: string[];
+  createdAt: string;
   dimensionLengthInCM: string;
   dimensionWidthInCM: string;
   image: string;
+  isFeatured: boolean;
   isOurWork: boolean;
   materials: string[];
   previewImage: string;
+  title: string;
   year: string;
+  __v: number;
+  _id: string;
+  images: string[];
+  artist: any;
 }
 
 interface ApiResponse<T> {
   success: boolean;
   message: string;
   data: T;
+}
+
+// // Define the FeaturedArtwork interface
+interface FeaturedArtwork {
+  _id: string;
+  title: string;
+  year: string;
+  dimensionLengthInCM: string;
+  dimensionWidthInCM: string;
+  artist: string;
+  categories: string[];
+  createdAt: string;
+  images: string[];
+  isFeatured: boolean;
+  isOurWork: boolean;
+  materials: string[];
+  previewImage: string;
+  __v: number;
+  featuredArtworks: FeaturedArtwork[{}];
+}
+
+interface Exhibition {
+  _id: string;
+  title: string;
+  type: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  createdAt: string;
+  isFeatured: boolean;
+  images: string[];
+  artists: string[];
+  __v: number;
 }
