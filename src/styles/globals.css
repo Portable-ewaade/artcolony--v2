@@ -9,3 +9,7 @@ box-sizing: border-box;
 font-family: 'Abhaya Libre' !important;
 }
 
+.m_8fb7ebe7:focus, .m_8fb7ebe7:focus-within {
+    outline: none;
+    --input-bd: #DA3400 !important;
+}

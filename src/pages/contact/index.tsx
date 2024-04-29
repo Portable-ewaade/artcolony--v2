@@ -152,20 +152,23 @@ const Contact = () => {
           <h3 className='font-semibold md:text-lg text-xl'>
             No 5, peter adenuga close, <br /> ajibade street, mokola, ibadan
           </h3>
-          <h3 className='font-semibold text-lg underline'>
+          <h3 className='font-semibold text-lg my-1'>
+            <a href='tel:+234123456789'>+234123456789</a>
+          </h3>
+          <h3 className='font-semibold text-lg underline '>
             <a href='mailto:info@artcolonygallery.com'>
               info@artcolonygallery.com
             </a>
           </h3>
 
           {/* <Map address='1600 Amphitheatre Parkway, Mountain View, CA' /> */}
-          
         </div>
         <div className='rounded-lg shadow-2xl p-10'>
           <form onSubmit={form.onSubmit(console.log)}>
             <TextInput
               size='md'
               label='First Name'
+              my={20}
               placeholder='Enter your first name'
               {...form.getInputProps('firstName')}
             />
@@ -173,20 +176,23 @@ const Contact = () => {
               mt='sm'
               size='md'
               label='Last Name'
+              my={20}
               placeholder='Enter your last name'
               {...form.getInputProps('lastName')}
             />
             <TextInput
               mt='sm'
               size='md'
-              label='Email'
+              label='Email Address'
+              my={20}
               placeholder='Enter your email address'
               {...form.getInputProps('email')}
             />
             <TextInput
               mt='sm'
               size='md'
-              label='Phone'
+              label='Phone Number'
+              my={20}
               placeholder='Enter your valid phone number'
               {...form.getInputProps('phone')}
             />
@@ -194,6 +200,7 @@ const Contact = () => {
               mt='sm'
               size='md'
               label='Message'
+              my={20}
               placeholder='Send us a message'
               {...form.getInputProps('message')}
             />

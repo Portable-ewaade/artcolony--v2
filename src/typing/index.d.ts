@@ -23,6 +23,7 @@ interface ExhibitionPreview {
 }
 
 type Exhibition = {
+  firstName: any;
   exhibition: any;
   exhibitions: any[];
   artist: ReactNode;
@@ -40,7 +41,7 @@ type Exhibition = {
   title: string;
   images: string[];
   isFeatured: boolean;
-  artists: string[];
+  artists: any;
   type: string;
   description: string;
   createdAt: string;

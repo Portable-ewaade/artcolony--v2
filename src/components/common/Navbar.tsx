@@ -63,8 +63,10 @@ export default function Navigate() {
                         {link && ( // Add null check for link
                           <Link
                             href={link.url}
-                            className={`font-[550] text-[#02021C] mx-3 hover:text-[#0A0A8C] link ${
-                              pathname === '/' ? 'active' : ''
+                            className={`font-[550] text-[#02021C] mx-3 hover:text-[#DA3400] active:text-[#DA3400] link ${
+                              pathname === link.url
+                                ? 'active text-[#DA3400]'
+                                : ''
                             }`}
                           >
                             {link.title}
@@ -88,8 +90,8 @@ export default function Navigate() {
                   {link && (
                     <Link
                       href={link.url}
-                      className={`font-[550] mx-3 link ${
-                        pathname === '/' ? 'active' : ''
+                      className={`font-[550] mx-3 hover:text-[#DA3400]  link ${
+                        pathname === link.url ? 'active text-[#DA3400]' : ''
                       }`}
                       passHref
                       onClick={toggleDisclosure}
