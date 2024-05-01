@@ -53,50 +53,51 @@ const Banner = () => {
     ssr: false,
   });
   const Responsive: {} = {
-    dots: true,
-
     0: {
       items: 1,
-      dots: true,
       margin: 0,
     },
     768: {
       items: 1,
-      dots: true,
       margin: 0,
     },
     1024: {
       items: 1,
-      dots: true,
       margin: 0,
     },
   };
 
   return (
     <section className=' mx-auto relative '>
+      {/* {loading && (
+        <Center mt={20}>
+          <Loader />
+        </Center>
+      )} */}
+      {error && (
+        <Notification title='Error' color='red'>
+          {error}
+        </Notification>
+      )}
+
       <OwlCarousel
         responsive={Responsive}
-        dots={true}
         animateOut={'fadeOut'}
         autoplay={true}
+        loop={true}
+        dots={true}
+        dotsEach={true}
+        lazyLoad={true}
         autoplaySpeed={300}
         className=' z-0'
       >
-        {loading && (
-          <Center mt={20}>
-            <Loader />
-          </Center>
-        )}
-
-        {error && (
-          <Notification title='Error' color='red'>
-            {error}
-          </Notification>
-        )}
-
         {allGallery.map((image, index) => (
           <div className='' key={index}>
-            <img className='h-[100vh] w-full' src={image.images[0]} alt={image.title} />
+            <img
+              className='h-[88vh] w-full'
+              src={image.images[0]}
+              alt={image.title}
+            />
             <div className='my-4 text-center font-bold'>
               <h4 className='text-red'>{image.title}</h4>
             </div>

@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { Disclosure } from '@headlessui/react';
 import { FaAlignJustify, FaX } from 'react-icons/fa6';
 import Link from 'next/link';
-import { linkData } from '@/data/mockData';
+import { linkData, linkDataMobile } from '@/data/mockData';
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ');
@@ -23,7 +23,10 @@ export default function Navigate() {
   };
 
   return (
-    <Disclosure as='nav' className=' fixed z-50 w-full bg-white pt-0 shadow-xl'>
+    <Disclosure
+      as='nav'
+      className='z-10 fixed w-full bg-white pt-0 md:shadow-xl'
+    >
       {({ open }) => (
         <section className='container md:w-[91%] mx-auto'>
           <div className='px-3 md:px-0'>
@@ -41,14 +44,19 @@ export default function Navigate() {
               <div className='flex items-center sm:hidden'>
                 {/* Mobile menu button*/}
 
-                <Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
+                <Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white z-20'>
                   <span className='absolute -inset-0.5' />
                   <span className='sr-only'>Open main menu</span>
                   {open ? (
-                    <FaX className='block h-6 w-6' aria-hidden='true' />
+                    <FaX
+                      className='block h-6 w-6 border-0'
+                      color='#ffff'
+                      aria-hidden='true'
+                    />
                   ) : (
                     <FaAlignJustify
                       className='block h-6 w-6'
+                      color='#000'
                       aria-hidden='true'
                     />
                   )}
@@ -60,7 +68,7 @@ export default function Navigate() {
                   <div className='flex space-x-4'>
                     {linkData.map((link, index) => (
                       <ul className='nav-item ' key={index}>
-                        {link && ( // Add null check for link
+                        {link && (
                           <Link
                             href={link.url}
                             className={`font-[550] text-[#02021C] mx-3 hover:text-[#DA3400] active:text-[#DA3400] link ${
@@ -80,18 +88,17 @@ export default function Navigate() {
             </div>
           </div>
 
-          <Disclosure.Panel className='z-10'>
-            <div className='space-y-10 px-2 pb-3 pt-6 h-screen text-white w-2/3 end-0 absolute bg-gradient-to-r from-[#DA3400] to-[#892303] backdrop-brightness-100 shadow-lg z-10 disclosure '>
-              <Link href='/' className='font-[550] mx-3 link '>
-                HOME
-              </Link>
-              {linkData.map((link, index) => (
+          <Disclosure.Panel className='z-50'>
+            <div className='space-y-10 px-2 pb-3 pt-32 h-screen text-white w-2/3 end-0 top-0 absolute bg-gradient-to-r from-[#DA3400] to-[#892303]  disclosure'>
+              {linkDataMobile.map((link, index) => (
                 <ul className='' key={index}>
                   {link && (
                     <Link
                       href={link.url}
-                      className={`font-[550] mx-3 hover:text-[#DA3400]  link ${
-                        pathname === link.url ? 'active text-[#DA3400]' : ''
+                      className={`font-[550] mx-3 md:hover:text-[#DA3400] text-lg link pl-4 ${
+                        pathname === link.url
+                          ? 'active bg-slate-100 pr-20 pl-5 py-3.5 h-20  rounded-3xl text-[#DA3400]'
+                          : ''
                       }`}
                       passHref
                       onClick={toggleDisclosure}

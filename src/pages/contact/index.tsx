@@ -205,7 +205,7 @@ const Contact = () => {
               {...form.getInputProps('message')}
             />
             <div className='w-full mt-5 grid'>
-              <Button type='submit' mt='sm' color='#DA3400'>
+              <Button type='submit' mt='sm' size='18px'  h={50} color='#DA3400'>
                 Submit
               </Button>
             </div>
@@ -213,7 +213,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
+  )
 };
 
 export default Contact;

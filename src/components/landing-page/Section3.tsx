@@ -11,9 +11,7 @@ import React from 'react';
 const Section3 = () => {
   return (
     <>
-      <Flex mih={10} justify='flex-end' direction='row'>
-        <img src='/assets/star.png' alt='star icon' className='w-[30px]' />
-      </Flex>
+   
       <section className='container md:w-[90%] mx-auto p-3 md:p-0 mt-12 md:mt-0'>
         <Center mb={20}>
           <Box>

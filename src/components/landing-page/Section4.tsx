@@ -83,14 +83,16 @@ const Section4 = () => {
               <div key={_id} className='item cursor-pointer'>
                 <Link href='/gallery'>
                   <img
-                    className='h-[66vh] w-[100%]'
+                    className='h-[50vh] md:h-[66vh] w-[100%]'
                     src={artist.previewImage}
                     alt={`artist from ${artist.title}`}
                   />
                 </Link>
-                <h3 className='font-bold my-1'>{artist.title}</h3>
-                <div className='text-sm font-medium'>
-                  <p className='my-2'>
+                <h1 className='text-lg md:text-sm font-bold my-1'>
+                  {artist.title}
+                </h1>
+                <div className='text-lg md:text-sm font-medium'>
+                  <p className='my-2 '>
                     {artist.categories[0].charAt(0).toUpperCase() +
                       artist.categories[0].slice(1)}
                   </p>
@@ -105,7 +107,6 @@ const Section4 = () => {
                   </p>
                   <p>{`${artist.dimensionLengthInCM}" x ${artist.dimensionWidthInCM}"`}</p>
                 </div>
-                {/* <p>{artist.fullBiography}</p> */}
               </div>
             ))}
           </div>

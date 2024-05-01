@@ -13,3 +13,7 @@ font-family: 'Abhaya Libre' !important;
     outline: none;
     --input-bd: #DA3400 !important;
 }
+.disclosure {
+  box-shadow: 0px 0px 0px 150px #d0cfcf4d !important;
+}
+

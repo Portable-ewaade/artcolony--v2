@@ -82,7 +82,7 @@ const Artist = () => {
               onClick={() => handleArtistClick(artist._id)}
             >
               <img
-                className='h-[90%] w-[100%] '
+                className='h-[50vh] md:h-[90%] w-[100%] '
                 src={artist.previewImageWork}
                 alt={`artist from ${artist.firstName}`}
               />

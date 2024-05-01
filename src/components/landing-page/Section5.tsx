@@ -122,7 +122,7 @@ const Section5 = () => {
                     >
                       <div>
                         <img
-                          className='h-[65vh] w-[100%]'
+                          className='h-[50vh] md:h-[65vh] w-[100%]'
                           src={exhibition.images[0]}
                           alt={exhibition.title}
                         />
@@ -137,12 +137,11 @@ const Section5 = () => {
                           <p className='my-2 text-sm'>{exhibition.label}</p>
                           <p className='my-2 text-sm'>
                             {format(
-                              new Date(exhibition.startDate),
+                              new Date(exhibition.startDate.toUpperCase()),
                               'MMMM dd, yyyy'
                             )}{' '}
-                            -{' '}
                             {format(
-                              new Date(exhibition.endDate),
+                              new Date(exhibition.endDate.toUpperCase()),
                               'MMMM dd, yyyy'
                             )}
                           </p>

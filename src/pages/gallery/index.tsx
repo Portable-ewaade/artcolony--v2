@@ -86,7 +86,7 @@ const Gallery = () => {
               onClick={() => handleArtistClick(artist._id)}
             >
               <img
-                className='h-[90%] w-[100%]'
+                className='h-[50vh] md:h-[90%] w-[100%]'
                 src={artist.previewImage}
                 alt={`artist from ${artist.title}`}
               />
